@@ -1,11 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import { ShoppingCart, Search, User } from "lucide-react";
+import { useCartStore } from "@/store/cartStore";
 
 export default function Header() {
+  const totalItems = useCartStore((state) => state.totalItems());
+
   return (
     <header className="bg-white border-b">
       <div className="container mx-auto px-4 py-4">
-        
+
         {/* Top Row */}
         <div className="flex justify-between items-center mb-2">
           {/* Logo */}
@@ -28,19 +33,25 @@ export default function Header() {
 
           {/* Icons */}
           <div className="flex items-center gap-4 text-orange-500">
-            <Search size={20} className="cursor-pointer hover:opacity-80" />
-            <Link href="/cart">
-              <ShoppingCart
-                size={20}
-                className="cursor-pointer hover:opacity-80"
-              />
+            <Search size={20} className="cursor-pointer" />
+
+            {/* Cart Icon with Count */}
+            <Link href="/cart" className="relative">
+              <ShoppingCart size={20} />
+
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
             </Link>
-            <User size={20} className="cursor-pointer hover:opacity-80" />
+
+            <User size={20} className="cursor-pointer" />
           </div>
         </div>
 
-        {/* Bottom Row – Product Categories */}
-        <nav className="hidden md:flex gap-6 text-sm text-gray-600 justify-center pt-2">
+        {/* Bottom Row – Categories */}
+        <nav className="hidden md:flex gap-6 text-sm text-gray-600 justify-center pt-2 border-t">
           <Link href="/shop" className="hover:text-orange-500">
             All products
           </Link>
@@ -55,15 +66,6 @@ export default function Header() {
           </Link>
           <Link href="#" className="hover:text-orange-500">
             Cameras
-          </Link>
-          <Link href="#" className="hover:text-orange-500">
-            Smartwatches
-          </Link>
-          <Link href="#" className="hover:text-orange-500">
-            Accessories
-          </Link>
-          <Link href="#" className="hover:text-orange-500">
-            Drones
           </Link>
         </nav>
       </div>

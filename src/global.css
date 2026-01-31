@@ -28,3 +28,17 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+.input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #f97316;
+}
+

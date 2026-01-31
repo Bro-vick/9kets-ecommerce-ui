@@ -1,54 +1,82 @@
+"use client";
+
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
+import { useCartStore } from "@/store/cartStore";
 
-export default function CartItem() {
+type CartItemProps = {
+  item: {
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+    quantity: number;
+    color?: string;
+    storage?: string;
+  };
+};
+
+export default function CartItem({ item }: CartItemProps) {
+  const { increment, decrement, removeItem } = useCartStore();
+
   return (
-    <div className="bg-white rounded-xl p-6 flex flex-col sm:flex-row gap-6">
-      
-      {/* Product Image */}
-      <div className="relative w-24 h-24 shrink-0">
+    <div className="flex justify-between items-center border-b pb-6">
+      {/* Left */}
+      <div className="flex gap-4">
         <Image
-          src="/images/products/ultra-slim-laptop-product.png"
-          alt="Ultra-Slim Laptop"
-          fill
-          className="object-cover rounded-lg"
+          src={item.image}
+          alt={item.name}
+          width={80}
+          height={80}
+          className="rounded-lg object-cover"
         />
+
+        <div>
+          <p className="font-semibold text-gray-900">
+            {item.name}
+          </p>
+
+          {(item.color || item.storage) && (
+            <p className="text-sm text-gray-500">
+              {item.color && `Color: ${item.color}`}
+              {item.color && item.storage && ", "}
+              {item.storage && `Storage: ${item.storage}`}
+            </p>
+          )}
+
+          <p className="font-semibold mt-1">
+            ${item.price.toFixed(2)}
+          </p>
+        </div>
       </div>
 
-      {/* Product Info */}
-      <div className="flex-1">
-        <h3 className="font-semibold text-gray-900">
-          Ultra-Slim Laptop
-        </h3>
-        <p className="text-sm text-gray-500 mt-1">
-          High-performance laptop for professionals
-        </p>
+      {/* Right */}
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() => decrement(item.id)}
+          className="w-8 h-8 border rounded-md"
+        >
+          −
+        </button>
 
-        {/* Price + Controls */}
-        <div className="flex items-center justify-between mt-4">
-          <p className="font-semibold">$1250.00</p>
+        <span className="w-6 text-center">
+          {item.quantity}
+        </span>
 
-          {/* Quantity + Delete */}
-          <div className="flex items-center gap-3">
-            <button className="w-8 h-8 border rounded-lg hover:bg-gray-100">
-              −
-            </button>
+        <button
+          onClick={() => increment(item.id)}
+          className="w-8 h-8 border rounded-md"
+        >
+          +
+        </button>
 
-            <span className="w-6 text-center">1</span>
-
-            <button className="w-8 h-8 border rounded-lg hover:bg-gray-100">
-              +
-            </button>
-
-            {/* Delete Icon */}
-            <button
-              className="ml-2 text-gray-400 hover:text-red-500 transition"
-              aria-label="Remove item"
-            >
-              <Trash2 size={18} />
-            </button>
-          </div>
-        </div>
+        <button
+          onClick={() => removeItem(item.id)}
+          className="text-gray-400 hover:text-red-500"
+          aria-label="Remove item"
+        >
+          <Trash2 size={18} />
+        </button>
       </div>
     </div>
   );
