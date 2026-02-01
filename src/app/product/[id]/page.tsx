@@ -212,7 +212,7 @@ export default function ProductDetailsPage() {
         </div>
 
         {/* ================= CUSTOMER REVIEWS ================= */}
-        <div className="bg-white rounded-xl p-6 w-1/2">
+        <div className="bg-white rounded-xl p-6 w-full">
           <h2 className="font-semibold mb-2">Customer Reviews</h2>
 
           <div className="flex items-center gap-2 mb-4">
