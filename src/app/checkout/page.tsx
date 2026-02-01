@@ -43,22 +43,24 @@ export default function CheckoutPage() {
                   <input className="input border rounded-lg p-2 w-full" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-30 w-max">
-                  <div>
+                <div className="grid grid-cols-3 gap-1 w-230">
+                  <div className="w-75">
                     <label className="text-sm mb-1 block">City</label>
                     <input className="input w-full border rounded-lg p-2" />
                   </div>
 
-                  <div>
+                  <div className="w-75">
                     <label className="text-sm mb-1 block">State</label>
                     <input className="input w-full border rounded-lg p-2" />
                   </div>
 
                   <div>
-                    <label className="text-sm mb-1 block">ZIP Code</label>
-                    <input className="input w-full border rounded-lg p-2" />
+                    <label className="text-sm w-75 mb-1 block">ZIP Code</label>
+                    <input className="input w-80 border rounded-lg p-2" />
                   </div>
                 </div>
+
+
 
 
                 <div className="md:col-span-2">
@@ -78,29 +80,68 @@ export default function CheckoutPage() {
 
               {/* Credit Card */}
               <div className="border rounded-lg p-4 mb-4">
-                <label className="flex items-start gap-3">
-                  <input type="radio" checked readOnly className="mt-1" />
-                  <div>
-                    <p className="font-medium">Credit Card</p>
-                    <p className="text-sm text-gray-500">
-                      Pay with your credit or debit card.
-                    </p>
+                <label className="flex items-center justify-between cursor-pointer">
+                  
+                  {/* Left side */}
+                  <div className="flex items-start gap-3">
+                    <input type="radio" checked readOnly className="mt-1" />
+
+                    <div>
+                      <p className="font-medium">Credit Card</p>
+                      <p className="text-sm text-gray-500">
+                        Pay with your credit or debit card.
+                      </p>
+                    </div>
                   </div>
+
+                  {/* Right side – card icons */}
+                  <div className="flex gap-1">
+                    <img
+                      src="/images/ui/credit-card-1.png"
+                      alt="Credit card logo"
+                      className="h-6 object-contain"
+                    />
+                    <img
+                      src="/images/ui/credit-card-2.png"
+                      alt="Credit card logo"
+                      className="h-6 object-contain"
+                    />
+                    <img
+                      src="/images/ui/credit-card-3.png"
+                      alt="Credit card logo"
+                      className="h-6 object-contain"
+                    />
+                  </div>
+
                 </label>
               </div>
 
-              {/* PayPal */}
-              <div className="border rounded-lg p-4 mb-6">
-                <label className="flex items-start gap-3">
+
+            {/* PayPal */}
+            <div className="border rounded-lg p-4 mb-6">
+              <label className="flex items-center justify-between cursor-pointer">
+                
+                {/* Left side */}
+                <div className="flex items-start gap-3">
                   <input type="radio" className="mt-1" />
+
                   <div>
                     <p className="font-medium">PayPal</p>
                     <p className="text-sm text-gray-500">
                       Pay securely with your PayPal account.
                     </p>
                   </div>
-                </label>
-              </div>
+                </div>
+
+                {/* Right side – PayPal logo */}
+                <img
+                  src="/images/ui/paypal.png"
+                  alt="PayPal"
+                  className="h-6 object-contain"
+                />
+              </label>
+            </div>
+
 
               {/* CARD DETAILS */}
               <div className="space-y-4">
@@ -109,7 +150,7 @@ export default function CheckoutPage() {
                     Card Number
                   </label>
                   <input
-                    className="input border rounded-lg p-2"
+                    className="input border rounded-lg p-2 w-full"
                     value="•••• •••• •••• ••••"
                     readOnly
                   />
@@ -121,7 +162,7 @@ export default function CheckoutPage() {
                       Expiry Date
                     </label>
                     <input
-                      className="input border rounded-lg p-2"
+                      className="input border rounded-lg p-2 w-full"
                       value="MM / YY"
                       readOnly
                     />
@@ -132,7 +173,7 @@ export default function CheckoutPage() {
                       CVC
                     </label>
                     <input
-                      className="input border rounded-lg p-2"
+                      className="input border rounded-lg p-2 w-full"
                       value="•••"
                       readOnly
                     />

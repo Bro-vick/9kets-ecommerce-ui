@@ -8,8 +8,8 @@ export default function Header() {
   const totalItems = useCartStore((state) => state.totalItems());
 
   return (
-    <header className="bg-white border-b">
-      <div className="container mx-auto px-4 py-4">
+    <header className="bg-white ">
+      <div className="container mx-auto px-20 py-10">
 
         {/* Top Row */}
         <div className="flex justify-between items-center mb-2">
@@ -51,7 +51,7 @@ export default function Header() {
         </div>
 
         {/* Bottom Row – Categories */}
-        <nav className="hidden md:flex gap-6 text-sm text-gray-600 justify-center pt-2 border-t">
+        <nav className="hidden md:flex gap-6 text-sm text-gray-600 justify-center pt-2">
           <Link href="/shop" className="hover:text-orange-500">
             All products
           </Link>
