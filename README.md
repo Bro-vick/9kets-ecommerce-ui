@@ -7,7 +7,7 @@ This project demonstrates clean architecture, scalable component structure, and 
 
 ## 🌐 Live Demo & Repository
 
-- **Live Demo:** https://your-vercel-link.vercel.app  
+- **Live Demo:** https://9kets-ecommerce-ui.vercel.app  
 - **GitHub Repository:** https://github.com/your-username/9kets-ecommerce-ui  
 
 ---
