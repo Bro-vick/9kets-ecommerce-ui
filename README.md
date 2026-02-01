@@ -64,29 +64,29 @@ This project demonstrates clean architecture, scalable component structure, and 
 - Optimized images with `next/image`
 
 
+## Local Test Links (Development)
+- http://localhost:3000/
+- http://localhost:3000/shop
+- http://localhost:3000/product/1
+- http://localhost:3000/cart
+- http://localhost:3000/checkout
+- http://localhost:3000/account/orders
+
 ##  Installation & Setup
 
 ### 1. Clone the Repository
 
-```bash
-1. Clone Repo
-git clone https://github.com/your-username/9kets-ecommerce-ui.git
-cd 9kets-ecommerce-ui
-2. Install Dependencies
-bash
-Copy code
-npm install
-3. Run Development Server
-bash
-Copy code
-npm run dev
-Open your browser at:
+- git clone https://github.com/your-username/9kets-ecommerce-ui.git
+- cd 9kets-ecommerce-ui
 
-arduino
-Copy code
-http://localhost:3000
+### 2. Install Dependencies
+- npm install
 
+### 3. Run Development Server
+- npm run dev
 
+### 4. Open your browser at
+- Open your browser at:
 
 
 👨‍💻 Author
