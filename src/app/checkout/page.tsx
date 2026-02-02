@@ -43,7 +43,7 @@ export default function CheckoutPage() {
                   <input className="input border rounded-lg p-2 w-full" />
                 </div>
 
-                <div className="grid grid-cols-3 gap-1 w-230">
+                {/* <div className="grid grid-cols-3 gap-1 w-230">
                   <div className="w-75">
                     <label className="text-sm mb-1 block">City</label>
                     <input className="input w-full border rounded-lg p-2" />
@@ -58,7 +58,25 @@ export default function CheckoutPage() {
                     <label className="text-sm w-75 mb-1 block">ZIP Code</label>
                     <input className="input w-80 border rounded-lg p-2" />
                   </div>
+                </div> */}
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 md:col-span-2">
+                  <div>
+                    <label className="text-sm mb-1 block">City</label>
+                    <input className="input w-full border rounded-lg p-2" />
+                  </div>
+
+                  <div>
+                    <label className="text-sm mb-1 block">State</label>
+                    <input className="input w-full border rounded-lg p-2" />
+                  </div>
+
+                  <div>
+                    <label className="text-sm mb-1 block">ZIP Code</label>
+                    <input className="input w-full border rounded-lg p-2" />
+                  </div>
                 </div>
+
 
 
 
